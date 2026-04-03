@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+<!-- favicon starts   -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.ico">
+ <!-- favicon ends -->
+
+ <!-- title starts -->
+    <title>Conference ticket generator</title>
+ <!-- title ends -->
+
+ <!-- styling starts -->
+    <link rel="stylesheet" href="style.css">
+ <!-- styling ends -->
+
+ <!-- font starts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+ <!-- font ends -->
+
+
+</head>
+<body class="montserrat">
+
+  <!-- Form starts -->
+
+  <main id="formSection" class="">
+
+    <header>
+      <div class="logo"><img src="./assets/images/logo-full.svg" alt="logo coding conf" loading="lazy"></div>
+      <h1>Your Journey to Coding Conf 2026 Starts Here!</h1>
+      <p>Secure your spot at next year's biggest coding conference.</p>
+    </header>
+  
+  <section id="form" class="">
+    <form id="ticketForm" >
+
+<!-- image upload section starts  -->
+      <div class="imageUpload">
+
+        <label for="avatar">Upload Avatar</label>
+        <div class="avatar-container">
+
+          <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg" hidden aria-label="Upload avatar image" >
+          <label for="avatar" class="avatar-dropzone">
+
+            <div class="avatar-preview" id="avatarPreview">
+              <img src="./assets/images/icon-upload.svg" alt="upload icon" loading="lazy" class="upload-icon">
+              <p>Drag and drop or click to upload</p>
+            </div>
+
+            <div class="avatar-buttons hidden" id="avatarButtons">
+              <button type="button" class="remove-btn" id="removeImage">Remove Image</button>
+              <button type="button" class="change-btn">Change Image</button>
+            </div>
+          </label>
+        </div>
+       <span class="upload-hint">
+          <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7.01001V7.00002M12 17L12 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="hsl(252, 6%, 83%)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          <p class="drag">Upload your photo (JPG or PNG, max size: 1MB).</p>
+       </span>
+      </div>
+<!-- image upload section ends  -->
+
+<!-- name input section starts  -->
+      <div class="name">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" placeholder="John Doe" autocomplete="name">
+        <p class="nameError error" role="alert" aria-live="polite"></p>
+      </div>
+<!-- name input section ends  -->
+
+<!-- email input starts  -->
+      <div class="email">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="example@email.com" autocomplete="email">
+        <p class="emailError error"></p>
+      </div>
+<!-- email input section ends  -->
+
+<!-- github input section starts  -->
+      <div class="github">
+        <label for="github">GitHub Username</label>
+        <input type="text" name="GitHubUserName" id="github" placeholder="@yourusername" >
+        <p class="githubError error"></p>
+      </div>
+<!-- github input section ends  -->
+
+      <button id="generate" type="submit">Generate My Ticket</button>  
+    </form>
+  </section>
+  </main>
+  <!-- Form ends -->
+
+  <!-- Generated tickets starts -->
+
+  <main id="ticketSection" class="">
+
+    <header>
+      <div class="image"><img src="./assets/images/logo-full.svg" alt="logo"></div>
+      <h1> Congrats, <span id="userName"></span>! Your ticket is ready.</h1>
+      <p>We've emailed your ticket to <span id="userEmail"></span> and will send updates in the run up to the event.</p>
+    </header>
+
+    <div class="ticket">
+
+      <div class="logo-date">
+          <div class="logo-image"><img src="./assets/images/logo-mark.svg" alt="logo mark" loading="lazy"></div>
+        <div>
+          <h2>Coding Conf</h2>
+          <p id="dateLocation"> <span id="date"></span> / Austin, TX</p>
+        </div>
+
+      </div>
+
+      <div class="userInfos">
+        <div class="userImage"></div>
+        <div class="userNameGitHub">
+          <h2 id="userNameTicket"></h2>
+          <div class="github">
+            <img src="./assets/images/icon-github.svg" alt="github icon" loading="lazy">
+            <div class="githubUserName"><p></p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="random-number">
+        <p id="randomNumber"></p>
+      </div>
+
+    </div>
+
+  </main>
+  <!-- Generated tickets ends -->
+</main>
+  
+
+</body>
+<script src="main.js"></script>
+</html>

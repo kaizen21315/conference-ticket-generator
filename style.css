@@ -1,0 +1,420 @@
+/*Start global rules */
+
+:root {
+  /* Neutral colors */
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-600:hsl(247, 27%, 25%);
+  --neutral-600-hover:hsl(236, 16%, 35%);
+  --neutral-700: hsl(242, 23%, 27%);
+  --neutral-800: hsl(243, 47%, 17%);
+  --neutral-900: hsl(248, 70%, 10%);
+
+  /* Orange colors */
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+
+  /* Gradient colors */
+  --gradient-start: hsl(7, 86%, 67%);
+  --gradient-end: hsl(0, 0%, 100%);
+  
+  /* Full gradient (for convenience) */
+  --gradient-text: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+
+  /* font size  */
+  --h1:clamp(1.3rem, 2vw + 1rem, 2rem);
+  --paragraph:0.8125rem;
+  --input:0.75rem;
+  --span:0.625rem;
+  --label:0.9375rem;
+}
+
+/* font starts*/
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* font ends*/
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+
+ /* End global rules*/
+ 
+body{
+    background-color: var(--neutral-900);
+}
+
+main{
+    background: 
+    url(./assets/images/pattern-lines.svg) top  / cover no-repeat,
+    url(./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg) bottom left /20rem 14rem no-repeat,
+    url(./assets/images/pattern-squiggly-line-top.svg) top right / 6rem 6rem no-repeat,
+    url(./assets/images/pattern-circle.svg) 65% 70% / 10rem 10rem no-repeat,
+    url('./assets/images/background-mobile.png') bottom  / 100vw 100% no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--neutral-0);
+    padding: 1.5rem 1rem ;
+}
+
+.hidden{
+    display: none !important;
+}
+
+/* start of header  */
+
+header{
+    text-align: center;
+    width: min(100% ,25rem);
+    margin-inline: auto;
+}
+
+header .logo{
+    margin-bottom: 1.8rem;
+}
+
+header .logo img{
+    width: 8.4rem;
+}
+
+header h1{
+    font-size: var(--h1);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+header p{
+    font-size: var(--paragraph);
+    color: var(--neutral-300);
+    font-weight: 300;
+    margin-bottom: 1.8rem;
+}
+
+/* end of header  */
+
+/* form starts */
+
+#form{
+    width: min(95% ,20rem);
+    margin-inline: auto;
+}
+
+#form #ticketForm div{
+    display: grid;
+    gap: .5rem;
+}
+
+.imageUpload div > label{
+    font-size: var(--span);
+    font-weight: 500;
+}
+
+
+.avatar-dropzone {
+    border: 2px dashed var(--neutral-500);
+    padding:1rem;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    background-color: var(--neutral-800);
+    border-radius: .5rem;
+}
+
+.avatar-dropzone:hover{
+    background-color: var(--neutral-700);
+}
+
+#form #ticketForm .avatar-preview{
+    display: grid;
+    justify-items: center;
+}
+
+.upload-icon{
+    width: 3rem;
+    border: 1px var(--neutral-700) solid;
+    background-color: var(--neutral-600);
+    border-radius: .5rem;
+    padding: .3rem;
+    transition: all .3s linear;
+}
+
+.avatar-preview p{
+    color: var(--neutral-300);
+    font-weight: 300;
+}
+
+.avatar-dropzone:hover .upload-icon{
+    background-color: var(--neutral-600-hover);
+}
+
+.avatar-buttons{
+    margin-top: 1rem;
+    margin-inline: .9rem ;
+}
+
+.flex{
+    display: flex !important;
+}
+
+.remove-btn,
+.change-btn{
+    background-color: var(--neutral-700);
+    border: none;
+    color: var(--neutral-500);
+    padding: .4rem .6rem;
+    border-radius: .3rem;
+    font-size: var(--span);
+    transition: all .3s linear;
+    width: 6rem;
+    margin-inline: auto;
+}
+
+.remove-btn{
+    text-decoration: underline;
+}
+
+.avatar-dropzone:hover .remove-btn,
+.avatar-dropzone:hover .change-btn{
+    background-color: var(--neutral-600-hover);
+}
+
+.imageUpload span{
+    font-size: var(--span);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--neutral-300);
+}
+
+.imageUpload span img{
+    width: .8rem;
+}
+
+#form #ticketForm label{
+    font-size: var(--label);
+}
+
+.upload-hint svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+#form #ticketForm input[type="text"],
+#form #ticketForm input[type="email"] {
+    background-color: var(--neutral-800);
+    border: 1px solid var(--neutral-500);
+    border-radius: .5rem;
+    padding: .6rem;
+    color: var(--neutral-300);
+    font-size: var(--input);
+    font-family: "Montserrat", sans-serif;
+    transition: all .3s ease;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px var(--neutral-800) inset !important;
+    box-shadow: 0 0 0 1000px var(--neutral-800) inset !important;
+    -webkit-text-fill-color: var(--neutral-300) !important;
+}
+
+#form #ticketForm input:focus{
+    outline: 2px var(--neutral-500) solid ;
+    outline-offset: 2px;
+    transition: all .3s linear;
+}
+
+#form #ticketForm input::placeholder {
+    color: var(--neutral-500);
+    font-size: var(--span);
+    opacity: 1;
+    transition: all 0.4s linear;
+}
+
+#form #ticketForm input:hover::placeholder {
+    opacity: 0;
+}
+
+#form #generate{
+    width: 100%;
+    border-radius: .5rem;
+    border: none;
+    background-color: var(--orange-500);
+    font-weight: 600;
+    font-size: var(--label);
+    padding: .6rem;
+}
+
+#generate.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+#generate.loading::after {
+    content: "...";
+    animation: dots 1s infinite;
+}
+
+#form #generate:hover{
+    background-color: var(--orange-700);
+    cursor: pointer;
+    box-shadow: 0 2px 0 0 var(--orange-500);
+}
+
+#form #generate:active{
+    box-shadow: none;
+}
+
+.error{
+    font-size: var(--span);
+    margin-bottom: 1rem;
+    color: var(--orange-500);
+}
+
+/* form ends */
+
+/* ticket starts  */
+
+#ticketSection{
+    display: grid;
+    justify-items: center;
+    display: none;
+}
+
+#ticketSection header h1 span{
+    background: linear-gradient(to left, var(--neutral-0), var(--orange-500));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; 
+}
+
+#ticketSection header p span{
+    color: var(--orange-700);
+}
+
+#ticketSection .ticket{
+    background-image: url(./assets/images/pattern-ticket.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 1.12rem 1rem;
+    margin-top: 3rem;
+    width: 18rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#ticketSection .ticket .logo-date{
+    margin-bottom: 1.5rem;
+}
+
+#ticketSection .ticket .logo-date,
+ #ticketSection .ticket .userInfos{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#ticketSection .ticket h2{
+    font-size: 1.2rem;
+}
+
+#ticketSection .ticket .logo-date img{
+    width: 2rem;
+}
+
+#ticketSection .ticket p{
+    font-size: var(--span);
+    color: var(--neutral-300);
+}
+
+#ticketSection  #randomNumber{
+    position: absolute;
+    color: var(--neutral-300);
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    right: .6rem; 
+}
+
+#ticketSection .userInfos .github{
+    display: flex;
+    align-items: center;
+}
+
+/* ticket end  */
+#formSection,
+#ticketSection {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+ /*start of breakpoints */
+
+
+
+
+/*  768px */
+@media (min-width: 768px) {
+    main{
+    background: 
+    url(./assets/images/pattern-lines.svg) top  / cover no-repeat,
+    url(./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg) bottom left /20rem 14rem no-repeat,
+    url(./assets/images/pattern-squiggly-line-top.svg) top right / 6rem 6rem no-repeat,
+    url(./assets/images/pattern-circle.svg) 65% 70% / 10rem 10rem no-repeat,
+    url('./assets/images/background-tablet.png') bottom  / 100vw 100% no-repeat;
+    background-attachment: fixed;
+    }
+}
+
+
+/* ≥ 1024px */
+@media (min-width: 1024px) {
+    main{
+    background: 
+    url(./assets/images/pattern-lines.svg) top  / cover no-repeat,
+    url(./assets/images/pattern-squiggly-line-bottom-desktop.svg) bottom left /20rem 14rem no-repeat,
+    url(./assets/images/pattern-squiggly-line-top.svg) top right / 6rem 6rem no-repeat,
+    url(./assets/images/pattern-circle.svg) 65% 70% / 10rem 10rem no-repeat,
+    url('./assets/images/background-desktop.png') bottom  / 100vw 100% no-repeat;
+    background-attachment: fixed;
+    }
+}
+
+
+/* ≥ 1280px */
+@media (min-width: 1280px) {
+}
+
+/* ≥ 1536px */
+@media (min-width: 1536px) {
+}
+
+
+
+
+
+
+
+
+
